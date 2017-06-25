@@ -9,6 +9,8 @@ exports.get = get;
 exports.set = set;
 exports.rem = rem;
 
+exports.getTypes = getTypes;
+
 exports.dump = dump;
 
 
@@ -41,6 +43,23 @@ function set(type, id, data, callback) {
 function rem(type, id, callback) {
 	delete db[type][id];
 }
+
+
+function getTypes(callback) {
+
+	var res = [];
+
+	if(typeof db.Type === 'undefined') {
+		db.Type = {};
+	}
+
+	for(var each in db.Type) {
+		res.push(db.Type[each]);
+	}
+
+	callback(res);
+}
+
 
 function dump(callback) {
 	if (typeof callback === 'function') {
