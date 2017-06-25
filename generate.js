@@ -24,7 +24,7 @@ function add(type, endpoint, project) {
 			})
 		);
 
-		roject.routes.add(
+		project.routes.add(
 			new Route({
 				id: type + 'Get',
 				path: '/' + endpoint,
