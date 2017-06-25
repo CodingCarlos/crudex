@@ -4,6 +4,40 @@ Don't make an api for just a crud anymore.
 ## Status:
 This is just an idea. There is no alpha version yet.
 
+## How does it works
+
+Execute server.js, and start making api calls to `/endpoint` to add new resources to the crud. Each resource shall have a Type, like this:
+
+```
+{
+ name: 'User',
+ id: 'id',
+ data: {
+  id: {
+   type: 'number',
+   mandatory: true,
+   generate: 'random'
+  },
+  name: {
+   type: 'String',
+   mandatory: false,
+   generate: false
+  }
+ }
+}
+```
+
+This type define how will be the resource. A post request to `/endpoint` with that object as a "type" parameter in request body will create an `/user` endpoint. This endpoint has a GET, POST, PUT and DELETE method. I mean, all the CRUD is already created for you. Yes, the following endpoints are now available:
+
+```
+[GET]    /user     -> User list
+[GET]    /user/id  -> Get user by ID
+[POST]   /user     -> Add new user
+[PUT]    /user/id  -> Update user by ID (will keep existing properties)
+[DELETE] /user/id  -> Delete user by ID
+```
+Not bad, right? 
+
 ### The idea: 
 A crud creator and exposer to make fast APIs for every single application. 
 
