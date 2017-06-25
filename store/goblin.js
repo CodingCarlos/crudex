@@ -12,6 +12,7 @@ Goblin.updateConfig({file: './goblin_bd.json', recordChanges: true});
 
 exports.get = get;
 exports.set = set;
+exports.rem = rem;
 
 exports.dump = dump;
 
@@ -50,7 +51,8 @@ function set(type, id, data, callback) {
 }
 
 function rem(type, id, callback) {
-	Goblin.delete(type[id]);
+	// Goblin.delete(type[id]);
+	console.log('REMOVEEEEEEEEE');
 	// delete db[type][id];
 }
 

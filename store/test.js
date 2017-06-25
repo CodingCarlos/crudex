@@ -7,6 +7,7 @@ var db = {};
 
 exports.get = get;
 exports.set = set;
+exports.rem = rem;
 
 exports.dump = dump;
 
