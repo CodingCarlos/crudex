@@ -1,4 +1,3 @@
-// var DB = require('./store/db.js');
 var Crud = require('./crud.js');
 
 
@@ -31,9 +30,15 @@ var user = {
 };
 
 // Add type user.
-Crud.add('Type', User, function() {
+Crud.add('Type', User, function(typeType) {
+
+	console.log('Added type type');
+	// console.log(typeType);
 
 	Crud.add('User', user, function(addedUser) {
+
+		console.log('Added user');
+		console.log(addedUser);
 
 		var updateUser = {
 			id: addedUser.id,
@@ -42,7 +47,6 @@ Crud.add('Type', User, function() {
 
 		Crud.put('User', updateUser, function(data) {
 			console.log(data);
-			// DB.dump();
 		});
 
 	});

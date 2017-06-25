@@ -1,7 +1,8 @@
 
 // Generate the CRUD generator 
 
-var DB = require('./store/db.js');
+var DB = require('./store/goblin.js');
+// var DB = require('./store/db.js');
 
 /* Exports */
 exports.get = get;

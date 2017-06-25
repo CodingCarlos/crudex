@@ -1,6 +1,7 @@
 
 var ERROR = require('./error.js');
-var DB = require('./store/db.js');
+// var DB = require('./store/db.js');
+var DB = require('./store/goblin.js');
 var Type = require('./type.js');
 
 
