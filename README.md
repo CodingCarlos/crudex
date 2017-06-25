@@ -2,7 +2,15 @@
 Don't make an api for just a crud anymore.
 
 ## Status:
-This is just an idea. There is no alpha version yet.
+This is just an idea. There is no alpha version yet. The roadmap is the following:
+
+- [x] Add a crud for each Type.
+- [ ] Validate the input data with the Type.
+- [ ] Create relations between types.
+- [ ] Text search in type entities.
+- [ ] Filter in query by params
+
+While functions are added, I will keep updating this documentation.
 
 ## How does it works
 
