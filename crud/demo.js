@@ -40,7 +40,7 @@ Crud.add('Type', User, function() {
 			email: 'paco@fakemail.com'
 		};
 
-		Crud.update('User', updateUser, function(data) {
+		Crud.put('User', updateUser, function(data) {
 			console.log(data);
 			// DB.dump();
 		});

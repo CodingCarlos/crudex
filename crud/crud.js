@@ -8,7 +8,7 @@ var Type = require('./type.js');
 
 exports.get = get;
 exports.add = add;
-exports.set = update;
+exports.put = update;
 exports.rem = rem;
 
 
@@ -22,6 +22,7 @@ function add(type, data, callback) {
 	
 	clean(type, data, function(id, data, typeData) {
 		DB.set(type, id, data, callback);
+		// DB.dump();
 	});
 }
 
