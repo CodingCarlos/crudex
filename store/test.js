@@ -6,6 +6,7 @@ var db = {};
 /* Exposed functions */
 
 exports.get = get;
+exports.list = list;
 exports.set = set;
 exports.rem = rem;
 
@@ -26,6 +27,24 @@ function get(type, id, callback) {
 		callback(db[type][id]);
 	}
 }
+
+function list(type, callback) {
+
+	if(typeof db[type] === 'undefined') {
+		db[type] = {};
+	}
+
+	var res = [];
+
+	for(var each in db[type]) {
+		res.push(db[type][each]);
+	}
+
+	if(typeof callback === 'function') {
+		callback(each);
+	}
+}
+
 
 function set(type, id, data, callback) {
 

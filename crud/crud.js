@@ -7,6 +7,7 @@ var Type = require('./type.js');
 /* Exposed functions */
 
 exports.get = get;
+exports.list = list;
 exports.add = add;
 exports.put = update;
 exports.rem = rem;
@@ -16,6 +17,10 @@ exports.rem = rem;
 
 function get(type, id, callback) {
 	DB.get(type, id, callback);
+}
+
+function list(type, id, callback) {
+	DB.list(type, id, callback);
 }
 
 function add(type, data, callback) {
