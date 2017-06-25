@@ -2,6 +2,9 @@
 
 var project = require('pillars');
 var config = require('./config.js');
+
+var Generate = require('./generate.js');
+
 // var routes = require('./routes/routes.js');
 
 project.services.get('http').configure({
@@ -16,11 +19,21 @@ project.services.get('http').configure({
 // Crate main routes, the same to all projects
 project.routes.add(
 	new Route({
-		id: 'Home',
-		path: '/',
-		method: ['get']
+		id: 'Endpoint',
+		path: '/endpoint',
+		method: ['POST']
 	},
-	function(gw){
-		gw.html("<h1>Hello World!!</h1>");
+	function(gw) {
+
+		// console.log(gw.params);
+
+		// console.log(typeof gw.params.type);
+		// console.log(JSON.parse(gw.params.type));
+
+		Generate.new(JSON.parse(gw.params.type), gw.params.endpoint, project);
+
+		gw.html('done');
+
+		// gw.html("<h1>Hello World!!</h1>");
 	})
 );
