@@ -1,0 +1,22 @@
+{
+  "name": "crudex",
+  "version": "0.0.1",
+  "description": "Don't make an api for a crud anymore.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingCarlos/crudex.git"
+  },
+  "author": "CodingCarlos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodingCarlos/crudex/issues"
+  },
+  "homepage": "https://github.com/CodingCarlos/crudex#readme",
+  "dependencies": {
+    "pillars": "^0.6.2"
+  }
+}
