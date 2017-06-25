@@ -12,6 +12,9 @@ Goblin.updateConfig({file: './goblin_bd.json', recordChanges: true});
 
 exports.get = get;
 exports.set = set;
+exports.rem = rem;
+
+exports.getTypes = getTypes;
 
 exports.dump = dump;
 
@@ -50,9 +53,28 @@ function set(type, id, data, callback) {
 }
 
 function rem(type, id, callback) {
-	Goblin.delete(type[id]);
+	// Goblin.delete(type[id]);
+	console.log('REMOVEEEEEEEEE');
 	// delete db[type][id];
 }
+
+
+function getTypes(callback) {
+	var all = Goblin.get();
+
+	var res = [];
+
+	for(var each in all) {
+		if(each.indexOf('Type_') > -1) {
+			res.push(all[each]);
+		}
+	}
+
+	// console.log(res);
+
+	callback(res);
+}
+
 
 function dump(callback) {
 	if (typeof callback === 'function') {

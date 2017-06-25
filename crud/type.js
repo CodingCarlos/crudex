@@ -1,12 +1,13 @@
 
 // Generate the CRUD generator 
 
-var DB = require('./store/goblin.js');
-// var DB = require('./store/db.js');
+// var DB = require('../store/goblin.js');
+var DB = require('../store/db.js');
 
 /* Exports */
 exports.get = get;
 exports.set = set;	/* Is this neccessary? While I can create it directly from the CRUD... Idk. */
+
 
 /* Generate the Type type*/ 
 
@@ -45,7 +46,6 @@ var type = {
 };
 
 set('Type', type);
-// get('Type', console.log);
 
 
 /* Internal functions */

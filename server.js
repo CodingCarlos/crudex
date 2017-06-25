@@ -12,8 +12,14 @@ project.services.get('http').configure({
 }).start();
 
 
-// Go through all routes, and create it.
-//	TO_DO
+var DB = require('./store/db.js');
+
+DB.getTypes(function(types) {
+
+	for (var i = 0; i < types.length; i++) {
+		Generate.new(types[i], types[i].name.toLowerCase(), project);
+	}
+});
 
 
 // Crate main routes, the same to all projects
