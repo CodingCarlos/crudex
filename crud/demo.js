@@ -31,9 +31,15 @@ var user = {
 };
 
 // Add type user.
-Crud.add('Type', User, function() {
+Crud.add('Type', User, function(typeType) {
+
+	console.log('Added type type');
+	// console.log(typeType);
 
 	Crud.add('User', user, function(addedUser) {
+
+		console.log('Added user');
+		console.log(addedUser);
 
 		var updateUser = {
 			id: addedUser.id,

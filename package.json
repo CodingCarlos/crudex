@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/CodingCarlos/crudex#readme",
   "dependencies": {
+    "goblindb": "0.0.8",
     "pillars": "^0.6.2"
   }
 }
