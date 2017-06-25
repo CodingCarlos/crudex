@@ -1,7 +1,9 @@
 // var Goblin = require('goblindb')();
 var GDB = require('goblindb');
 var Goblin = GDB();
-// Goblin.updateConfig({file: './goblin_bd.json'});
+
+Goblin.startStorage();
+Goblin.updateConfig({file: './goblin_bd.json', recordChanges: true});
 
 
 // console.log(Goblin.get('Type'));
