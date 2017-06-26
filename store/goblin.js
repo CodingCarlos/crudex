@@ -11,6 +11,7 @@ Goblin.updateConfig({file: './goblin_bd.json', recordChanges: true});
 /* Exposed functions */
 
 exports.get = get;
+exports.list = list;
 exports.set = set;
 exports.rem = rem;
 
@@ -29,6 +30,26 @@ function get(type, id, callback) {
 
 	if(typeof callback === 'function') {
 		callback(Goblin.get(type +'_'+ id));
+	}
+}
+
+function list(type, callback) {
+
+	// if(typeof Goblin.get(type) === 'undefined') {
+	// 	Goblin.set({}, type);
+	// }
+
+	var res = [];
+	var all = Goblin.get();
+
+	for(var each in all) {
+		if(each.indexOf(type + '_') > -1) {
+			res.push(all[each]);
+		}
+	}
+
+	if(typeof callback === 'function') {
+		callback(res);
 	}
 }
 

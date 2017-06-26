@@ -26,6 +26,19 @@ function add(type, endpoint, project) {
 
 		project.routes.add(
 			new Route({
+				id: type + 'Get',
+				path: '/' + endpoint,
+				method: ['GET']
+			},
+			function(gw) {
+				Crud.list(type.name, function(data) {
+					response(gw, data);
+				});
+			})
+		);
+
+		project.routes.add(
+			new Route({
 				id: type + 'Post',
 				path: '/' + endpoint,
 				method: ['POST']
