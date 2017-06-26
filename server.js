@@ -36,7 +36,7 @@ project.routes.add(
 		// console.log(typeof gw.params.type);
 		// console.log(JSON.parse(gw.params.type));
 
-		Generate.new(JSON.parse(gw.params.type), gw.params.endpoint, project);
+		Generate.new(JSON.parse(gw.params.type), gw.params.endpoint || JSON.parse(gw.params.type).name, project);
 
 		gw.html('done');
 
